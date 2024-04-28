@@ -19,4 +19,9 @@ ARG ENCRYPTION_KEY
 
 ENV N8N_ENCRYPTION_KEY=$ENCRYPTION_KEY
 
+WORKDIR /home/nodes/
+RUN npm install n8n-nodes-browserless
+RUN npm install n8n-nodes-yaml
+RUN npm install n8n-nodes-youtube-transcript
+
 CMD ["n8n start"]
