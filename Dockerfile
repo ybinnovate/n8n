@@ -1,6 +1,5 @@
 FROM n8nio/n8n:latest
 
-
 ARG PGPASSWORD
 ARG PGHOST
 ARG PGPORT
@@ -23,5 +22,7 @@ WORKDIR /home/nodes/
 RUN npm install n8n-nodes-browserless
 RUN npm install n8n-nodes-yaml
 RUN npm install n8n-nodes-youtube-transcript
+
+RUN npm install -g youtube-captions-scraper
 
 CMD ["n8n start"]
