@@ -23,6 +23,6 @@ RUN npm install n8n-nodes-browserless
 RUN npm install n8n-nodes-yaml
 RUN npm install n8n-nodes-youtube-transcript
 
-RUN npm install -g youtube-captions-scraper
+RUN npm install -g youtube-captions-scraper --unsafe-perm
 
 CMD ["n8n start"]
