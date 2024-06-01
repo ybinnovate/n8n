@@ -22,7 +22,11 @@ WORKDIR /home/nodes/
 RUN npm install n8n-nodes-browserless
 RUN npm install n8n-nodes-yaml
 RUN npm install n8n-nodes-youtube-transcript
+
 USER root
-RUN npm install -g youtube-captions-scraper --unsafe-perm=true
+
+RUN npm install -g youtube-captions-scraper
+
+USER node
 
 CMD ["n8n start"]
