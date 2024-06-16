@@ -2,10 +2,9 @@ FROM n8nio/n8n:latest
 
 USER root
 
-RUN npm install -g youtube-captions-scraper
+RUN npm install -g youtube-captions-scraper pdf-parse mammoth csv-parse
 
 USER node
-
 
 ARG PGPASSWORD
 ARG PGHOST
@@ -19,7 +18,6 @@ ENV DB_POSTGRESDB_HOST=$PGHOST
 ENV DB_POSTGRESDB_PORT=$PGPORT
 ENV DB_POSTGRESDB_USER=$PGUSER
 ENV DB_POSTGRESDB_PASSWORD=$PGPASSWORD
-
 
 ARG ENCRYPTION_KEY
 
