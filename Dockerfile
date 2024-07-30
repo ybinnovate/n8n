@@ -1,5 +1,6 @@
 FROM n8nio/n8n:latest
 
+
 USER root
 
 # Install global npm packages
