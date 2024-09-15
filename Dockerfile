@@ -1,19 +1,10 @@
 FROM n8nio/n8n:latest
 
+
 USER root
 
-# Install Puppeteer dependencies
-RUN apk add --no-cache \
-    chromium \
-    nss \
-    freetype \
-    harfbuzz \
-    ca-certificates \
-    ttf-freefont \
-    && rm -rf /var/cache/apk/*
-
-# Install Puppeteer and other global npm packages
-RUN npm install -g puppeteer youtube-captions-scraper pdf-parse mammoth csv-parser ffmpeg.js
+# Install global npm packages
+RUN npm install -g youtube-captions-scraper pdf-parse mammoth csv-parser ffmpeg.js pdf-lib
 
 USER node
 
