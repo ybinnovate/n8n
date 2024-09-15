@@ -2,19 +2,17 @@ FROM n8nio/n8n:latest
 
 USER root
 
-# Install system dependencies required by PhantomJS
-RUN apt-get update && apt-get install -y \
-    libfontconfig1 \
-    libfreetype6 \
-    libjpeg62-turbo \
-    libpng16-16 \
-    libssl1.1 \
-    libx11-6 \
-    libxext6 \
-    libxrender1 \
-    fonts-liberation \
-    --no-install-recommends && \
-    rm -rf /var/lib/apt/lists/*
+# Install system dependencies required by PhantomJS using Alpine's package manager (apk)
+RUN apk add --no-cache \
+    fontconfig \
+    freetype \
+    ttf-dejavu \
+    libpng \
+    libjpeg-turbo \
+    libx11 \
+    libxrender \
+    libxext \
+    && rm -rf /var/cache/apk/*
 
 # Install global npm packages
 RUN npm install -g youtube-captions-scraper pdf-parse mammoth csv-parser ffmpeg.js html-pdf
