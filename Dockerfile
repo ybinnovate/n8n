@@ -3,7 +3,7 @@ FROM n8nio/n8n:latest
 USER root
 
 # Install global npm packages
-RUN npm install -g youtube-captions-scraper pdf-parse mammoth csv-parser ffmpeg.js pdf-lib
+RUN npm install -g youtube-captions-scraper pdf-parse mammoth csv-parser ffmpeg.js pdf-lib pdf-merger-js
 
 USER node
 
